@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title>LIVER FAILURE RESULT</title>
+		<link rel="shortcut icon" href="{{ url_for('static', filename='diabetes-favicon.ico') }}">
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+		<script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+		<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+	</head>
+
+    <body>
+
+       
+		<div class="container">
+            <h2 class='container-heading'><span class="heading_font">LIVER FAILURE RESULT </span></h2>
+            <div class='description'>
+    			
+    		</div>
+    	</div>
+
+		
+		<div class="results">
+		
+			{% if prediction==1 %}
+				<h1>Test : <span class='danger'>YOU HAVE CHANCE TO LIVER FAIL PLEASE CONSULT TO DOCTOR</span></h1>
+				
+			{% elif prediction==0 %}
+				<h1>Test: <span class='safe'>YOU DON'T HAVE CHANCE TO LIVER FAIL </span></h1>
+				
+			{% endif %}
+			
+
+		<!-- Footer -->
+       
+           
+
+	</body>
+</html>
