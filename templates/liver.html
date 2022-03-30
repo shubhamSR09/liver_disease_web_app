@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liver test</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='diabetes-favicon.ico') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <h1 class='container-heading'><span class="heading_font">LIVER FAILURE DETECTION </span></h1>
+       
+    </div>
+
+   
+    <div class="ml-container">
+        <form action="{{ url_for('predict') }}" method="POST">
+            <label for="Age">Age : </label>
+            <input type="text" id="Age" name="Age">
+            <br>
+    
+            <label for="Gender">Gender : </label>
+            <input type="text" id="Gender" name="Gender">
+            <br>
+    
+            <label for="Total_Bilirubin">Total Bilirubin : </label>
+            <input type="text" id="Total_Bilirubin" name="Total_Bilirubin">
+            <br>
+    
+            <label for="Direct_Bilirubin">Direct Bilirubin : </label>
+            <input type="text" id="Direct_Bilirubin" name="Direct_Bilirubin">
+            <br>
+    
+            <label for="Alkaline_Phosphotase">Alkaline Phosphotase : </label>
+            <input type="text" id="Alkaline_Phosphotase" name="Alkaline_Phosphotase">
+            <br>
+    
+            <label for="Alamine_Aminotransferase">Alamine Aminotransferase : </label>
+            <input type="text" id="Alamine_Aminotransferase" name="Alamine_Aminotransferase">
+            <br>
+    
+            <label for="Aspartate_Aminotransferase">Aspartate Aminotransferase : </label>
+            <input type="text" id="Aspartate_Aminotransferase" name="Aspartate_Aminotransferase">
+            <br>
+    
+            <label for="Total_Protiens">Total Protiens : </label>
+            <input type="text" id="Total_Protiens" name="Total_Protiens">
+            <br>
+    
+            <label for="Albumin">Albumin : </label>
+            <input type="text" id="Albumin" name="Albumin">
+            <br>
+    
+            <label for="Albumin_and_Globulin_Ratio">Albumin and Globulin Ratio : </label>
+            <input type="text" id="Albumin_and_Globulin_Ratio" name="Albumin_and_Globulin_Ratio">
+            <br>
+            <br>
+    
+            <input type="submit" value="Submit"><br><br>
+        </form>
+    
+    
+        <div class ="result">
+            <h2 >
+              {% if predictione==1 %}
+                        <h1 style="color:red;"><span class='danger'> You have HEART DISEASE.</span></h1>
+                        
+                    {% elif predictione==0 %}
+                        <h1 style="color:rgb(77, 42, 233);"><span class='safe'>You DON'T have HEART DISEASE.</span></h1>
+                        
+                    {% endif %}
+              
+            </h2>
+          </div>
+    </div>
+</body>
+</html>
